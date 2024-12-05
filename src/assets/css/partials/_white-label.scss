@@ -1,0 +1,13 @@
+
+$brand-primary: #8B2682; 
+$brand-primary-variant: #7A076F; 
+$brand-primary-light: rgba(139, 38, 130, 0.2); 
+$brand-primary-text: $light; 
+$brand-secondary: #2898A2; 
+$brand-secondary: if($brand-secondary == null, $brand-primary, $brand-secondary);
+$brand-secondary-variant: #156168; 
+$brand-secondary-light: rgba(40, 152, 162, 0.2); 
+$brand-secondary-text: $light; 
+
+$primary-family: 'Inter';
+$secondary-family: "Roboto";

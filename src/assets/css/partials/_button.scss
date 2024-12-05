@@ -1,0 +1,220 @@
+
+// Button Primary Variable
+$button-primary-background : (
+    theme: $brand-primary,
+    disabled-light: $light-variant,
+    disabled-dark: $dark-variant,
+);
+
+$button-primary-border : (
+    theme: $brand-primary,
+    disabled-light: $light-variant,
+    disabled-dark: $dark-variant,
+);
+
+$button-primary-text : (
+    theme : $brand-primary-text,
+    disabled-light: $dark,
+    disabled-dark : $light
+);
+
+$button-primary-background-hover : (
+    theme : $brand-primary-variant,
+    disabled-light: $light-variant,
+    disabled-dark : $dark-variant
+);
+
+$button-primary-border-hover : (
+    theme : $brand-primary-variant,
+    disabled-light: $light-variant,
+    disabled-dark : $dark-variant
+);
+
+$button-primary-text-hover : (
+    theme : $brand-primary-text,
+    disabled-light: $dark,
+    disabled-dark : $light
+);
+
+// Secondary Button Variable
+$button-secondary-background : (
+    theme: $light,
+    disabled-light: $light,
+    disabled-dark: $dark,
+);
+
+$button-secondary-border : (
+    theme: $brand-primary,
+    disabled-light: $light-variant,
+    disabled-dark: $dark-variant,
+);
+
+$button-secondary-text : (
+    theme : $brand-primary,
+    disabled-light: $light-variant,
+    disabled-dark : $dark-variant
+);
+
+$button-secondary-background-hover : (
+    theme : $light-hover,
+    disabled-light: $light,
+    disabled-dark : $dark
+);
+
+$button-secondary-border-hover : (
+    theme : $brand-primary-variant,
+    disabled-light: $light-variant,
+    disabled-dark : $dark-variant
+);
+
+$button-secondary-text-hover : (
+    theme : $brand-primary-text,
+    disabled-light: $light-variant,
+    disabled-dark : $dark-variant
+);
+
+// Button Primary class 
+
+.button-primary {
+    @include button-property-theme-based(background,$button-primary-background);
+    @include button-property-theme-based(border,$button-primary-border);
+    @include button-property-theme-based(color,$button-primary-text);
+
+    &:hover:not([disabled]){
+        @include button-property-theme-based(background,$button-primary-background-hover);
+        @include button-property-theme-based(border, $button-primary-border-hover);
+        @include button-property-theme-based(color, $button-primary-text-hover);
+    };
+
+    @include shared-button-style();
+};
+
+// Button Secondary class
+.button-secondary {
+    @include button-property-theme-based(background,$button-secondary-background);
+    @include button-property-theme-based(border,$button-secondary-border);
+    @include button-property-theme-based(color,$button-secondary-text);
+
+    &:hover:not([disabled]){
+        @include button-property-theme-based(background,$button-secondary-background-hover);
+        @include button-property-theme-based(border, $button-secondary-border-hover);
+        @include button-property-theme-based(color, $button-secondary-text-hover);
+    };
+    
+    @include shared-button-style();
+};
+
+
+// .test-button {
+//     background:#5a4343 !important;
+//     &:hover:not([disabled]){
+//         background:#966f6f !important;
+//     };
+//     &[disabled]{
+//         background:#bca9a9 !important; 
+//         &:hover{
+//             background: #cc0a0a !important;
+//         };
+//     };
+// }
+
+
+
+// Flat Button
+
+.mat-mdc-unelevated-button:not(:disabled).mat-primary
+{
+    color: var(--primary-button-text);
+    background-color: var(--primary-button-background);
+    border:1px solid var(--primary-button-border);
+    &:hover{
+        color :var(--primary-button-text-hover);
+        background-color:var(--primary-button-background-hover);
+        border:1px solid var(--primary-button-border-hover);
+    };
+}
+
+.mat-mdc-unelevated-button[disabled], .mat-mdc-unelevated-button.mat-mdc-button-disabled.mat-primary{
+    color: var(--primary-button-text-disabled);
+    background-color: var(--primary-button-background-disabled);
+    border:1px solid var(--primary-button-border-disabled);
+    &:hover{
+        color :var(--primary-button-text-hover-disabled);
+        background-color:var(--primary-button-background-hover-disabled);
+        border:1px solid var(--primary-button-border-hover-disabled);
+    }
+}
+
+.mat-mdc-unelevated-button:not(:disabled).mat-accent {
+    color: var(--secondary-button-text);
+    background-color: var(--secondary-button-background);
+    border:1px solid var(--primary-button-border);
+    &:hover{
+        color :var(--secondary-button-text-hover);
+        background-color:var(--secondary-button-background-hover);
+        border:1px solid var(--primary-button-border-hover);
+    };
+}
+
+.mat-mdc-unelevated-button[disabled], .mat-mdc-unelevated-button.mat-mdc-button-disabled.mat-accent{
+    color: var(--secondary-button-text-disabled);
+    background-color: var(--secondary-button-background-disabled);
+    border:1px solid var(--primary-button-border-disabled);
+    &:hover{
+        color :var(--secondary-button-text-hover-disabled);
+        background-color:var(--secondary-button-background-hover-disabled);
+        border:1px solid var(--primary-button-border-hover-disabled);
+    }
+}
+
+.mat-mdc-unelevated-button, 
+.mat-mdc-unelevated-button .mdc-button__ripple {
+	border-radius: var(--radius-small) !important;
+}
+
+.mat-mdc-unelevated-button
+{
+    padding:  0.5rem 1rem !important;  
+    font-family: "Inter"  !important; ;
+    font-weight: 500 !important;;
+    font-size: 1rem !important;;
+    line-height: 1.5 !important;
+    letter-spacing: 0px !important; 
+}
+
+
+// Leading Trailing Icons
+.mat-mdc-button>.mat-icon, 
+.mat-mdc-unelevated-button>.mat-icon, 
+.mat-mdc-raised-button>.mat-icon, 
+.mat-mdc-outlined-button>.mat-icon {
+    font-size: 1.25rem !important;
+    height: 1.25rem !important;
+    width: 1.25rem !important;
+}
+
+.mat-mdc-unelevated-button>.mat-icon,
+.mat-mdc-outlined-button>.mat-icon
+{
+    margin-right: 0.5rem !important;
+    margin-left: 0rem !important;
+}
+
+.mat-mdc-unelevated-button .mdc-button__label+.mat-icon ,
+.mat-mdc-outlined-button .mdc-button__label+.mat-icon
+{
+    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+}
+
+
+// .mat-mdc-outlined-button
+// {
+//     border-radius: var(--radius-small) !important;
+//     border-width: 1.5px;
+// }
+
+// .mat-mdc-outlined-button:not(:disabled).mat-primary {
+//     color: var(--primary-button-text) !important;
+//     border-color: var(--primary-button-border);
+// }

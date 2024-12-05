@@ -1,0 +1,66 @@
+// .tabs {
+//     display: inline-flex;
+//     position: relative;
+//     gap:0;
+//     list-style-type: none;
+//     @extend h6; 
+// }
+// .tab {
+//     @include tab-property-theme($theme-light);
+// }
+
+.mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 1px 3px 1px rgba(0, 0, 0, 0.15) !important;
+}
+
+.mat-button-toggle.mat-button-toggle-appearance-standard {
+    background: var(--tab-background-unselected);
+    color: var(--tab-text-unselected);
+    border: 1px solid var(--tab-border-unselected);
+    &:hover {
+        background-color: var(--tab-hover-unselected);
+    };
+}
+
+.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    background-color: var(--tab-background-selected) !important;
+    color: var(--tab-text-selected) !important;
+    border: 1px solid var(--tab-border-selected) !important;
+
+    &:hover {
+        background-color: var(--tab-hover-selected) !important;
+    };
+}
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle-appearance-standard+.mat-button-toggle-appearance-standard {
+    // border-left: solid 1px var(--tab-border-unselected) !important;
+    border-left: none !important;
+}
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    border-left:solid 1px var(--tab-border-selected) !important;
+}
+.mat-button-toggle-group-appearance-standard:has(+.mat-button-toggle-appearance-standard.mat-button-toggle-checked) {
+    border-right: solid 1px var(--tab-border-selected) !important;
+}
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle-appearance-standard:first-child {
+    border-top-left-radius: var(--radius-small); 
+    border-bottom-left-radius: var(--radius-small); 
+}
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle-appearance-standard:last-child {
+    border-top-right-radius: var(--radius-small); 
+    border-bottom-right-radius: var(--radius-small); 
+}
+
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+    // border: 1px  solid var(--tab-border-unselected) !important;
+    border: none !important;
+    border-radius: var(--radius-small) !important;
+    font-family: var(--primary-family) !important;
+    font-weight: var(--primary-medium) !important;
+    font-size:1rem !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0px !important;
+}

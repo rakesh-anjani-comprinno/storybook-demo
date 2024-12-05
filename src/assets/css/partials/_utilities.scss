@@ -1,0 +1,136 @@
+@use "@angular/material" as mat;
+
+
+
+@mixin utility-mixin ($theme){
+
+        // *{
+//     box-sizing: border-box;
+// }
+
+// a{
+//     transition: 0.3 ease all;
+//     text-decoration: none;
+// }
+
+// p {
+
+// }
+
+
+// .bg{ 
+//     background: mat.get-color-from-palette($foreground,text,.5); //here .5 is opacity and text color palate
+// }
+
+// .bg-app{
+//     background:mat.get-color-from-palette($background,app-bar);
+// }
+
+// .bg-hover{
+//     background: mat.get-color-from-palette($background,hover);
+// }
+
+// .bg-card {
+//     background: mat.get-color-from-palette($background,card);
+// }
+
+// .bg-status {
+//     background: mat.get-color-from-palette($background,status-bar);
+// }
+
+// .bg-primary {
+//     background:mat.get-color-from-palette($primary,.5); //.5 denotes opacity
+// }
+
+// .bg-accent{
+//     background:mat.get-color-from-palette($accent);
+// }
+
+// .bg-warn{
+//     background:mat.get-color-from-palette($warn);
+// }
+
+// // Outline
+// .outline{
+//     border: 1px solid mat.get-color-from-palette($foredground,divider);
+// }
+
+// .outline-primary{
+//     border: 1px solid mat.get-color-from-palette($primary);
+// }
+
+// .outline-accent{
+//     border: 1px solid mat.get-color-from-palette($accent);
+// }
+
+// .outline-warn{
+//     border: 1px solid mat.get-color-from-palette($warn);
+// }
+
+// .dashed {
+//     border-style: dashed;
+// }
+
+
+// .primary{
+//     color:mat.get-color-from-palette($primary,lighter);  // we could give the color to lighter,darker,text,default
+// //  color:mat.get-color-from-palette($primary,A200);  // we could also give any color palette
+// }
+
+// .accent{
+//     color:mat.get-color-from-palette($accent,lighter);  // we could give the color to lighter,darker,text,default
+// //  color:mat.get-color-from-palette($primary,A200);  // we could also give any color palette
+// }
+
+// .warn{
+//     color:mat.get-color-from-palette($warn,lighter);  // we could give the color to lighter,darker,text,default
+// //  color:mat.get-color-from-palette($primary,A200);  // we could also give any color palette
+// }
+
+        // Handle the foreground and background color dynamically in light and dark theme;
+        $foreground: map-get($theme,foreground );
+        .bg{
+            background : mat-get-color-palette($foreground,text);
+            // here there are different variation of foreground color is available like text,disable,basic etc we are using text variant color
+        }
+        $background: map-get($theme, background );
+        .text{
+            color: mat-get-color-palette($background,card);
+            // here important point is not the same color vairant is aviable in both the foreground and background color palette
+            // other option are status,app-bar,hover,dialog,disalbe-button etc.
+        }
+
+        .mat-card.custom-elevation{
+            @include mat.elevation(24);  // if i apply this class on any mat-card then custom-evevation will be applied 
+            // this is example of elevation in mixin
+        }
+
+         // Custom snacbar
+        .success-snackbar{
+            &::before{
+                background: #bcbe52;
+            }
+            .mat-icon{
+                color: #e3e63f;
+            }
+        }
+        .error-snackbar{
+            &::before{
+                background: #e3e63f;
+            }
+            .mat-icon{
+                color: #e3e63f;
+            }
+        }
+        .warning-snackbar{
+                &::before{
+                    background: #ca1212;
+                }
+                .mat-icon{
+                    color: #4e500f;
+                }
+        }
+
+    }
+
+   

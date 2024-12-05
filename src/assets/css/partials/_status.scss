@@ -1,0 +1,26 @@
+
+// used to show status indicator
+
+.status-success {
+    background-color: $status-background-green !important;
+    border: 1px solid $status-border-green !important;
+    color: $status-text-green !important;
+}
+
+.status-warning {
+    background-color: $status-background-yellow !important;
+    border: 1px solid $status-border-yellow !important;
+    color: $status-text-yellow !important;
+}
+
+.status-error {
+    background-color: $status-background-red !important;
+    border: 1px solid $status-border-red !important;
+    color: $status-text-red !important;
+}
+
+.status-neutral {
+    background-color: $status-background-grey;
+    border: 1px solid $status-border-grey;
+    color: $status-text-grey;
+}

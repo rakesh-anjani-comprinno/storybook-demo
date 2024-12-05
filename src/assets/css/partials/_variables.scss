@@ -1,0 +1,41 @@
+
+// Corner Radius Variables
+$radius-none: 0rem;
+$radius-x-small: 0.25rem;
+$radius-small: 0.5rem;
+$radius-main: 1rem;
+$radius-round: 99999rem;
+
+
+// Color Variables
+$transparent: rgba(255, 255, 255, 0); 
+$dark: #212121; 
+$dark-variant: #333333; 
+$dark-hover: #171717; 
+$light: #FFFFFF; 
+$light-variant: #C4C4C4; 
+$light-hover: #EFEFEF; 
+
+// Status Color
+
+// Green 
+$status-background-green: #DCF9F0;
+$status-border-green: #0C9C71;
+$status-text-green: $dark;
+
+// Yellow
+$status-background-yellow: #FAF8E6;
+$status-border-yellow: #D3BB43;
+$status-text-yellow: $dark;
+
+// Red 
+$status-background-red: #FAE6E6;
+$status-border-red: #D34343;
+$status-text-red: $dark;
+
+// Grey
+$status-background-grey: $light-hover; 
+$status-border-grey: $dark-variant; 
+$status-text-grey: $dark;
+
+

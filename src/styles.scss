@@ -1,1 +1,235 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+// @import "assets/css/partials/includes";
+@import "assets/css/partials/variables";
+@import "assets/css/partials/white-label";
+@import "assets/css/partials/typography";
+
+
+
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: #{$primary-family} ;   
+  background:var(--default-background-color);
+  color:var(--default-text-color); 
+}
+
+html {
+  @extend .light-mode;
+}
+
+
+// $custom-primary2: (
+//   50: #E3F2FD,
+//   100: #BBDEFB,
+//   200: #90CAF9,
+//   300: #64B5F6,
+//   400: #42A5F5,
+//   500: #2196F3,
+//   // 500: #9ce537,
+//   // 500: white,
+//   600: #1E88E5,
+//   700: #1976D2,
+//   800: #1565C0,
+//   900: #0D47A1,
+//   contrast: (
+//     50: rgba(0, 0, 0, 0.87), // Black with high opacity for better readability on light backgrounds
+//     100: rgba(0, 0, 0, 0.87),
+//     200: rgba(0, 0, 0, 0.87),
+//     300: rgba(0, 0, 0, 0.87),
+//     400: rgba(0, 0, 0, 0.87),
+//     500: white,              // White for better readability on darker backgrounds
+//     600: white,
+//     700: white,
+//     800: white,
+//     900: white
+//   )
+// );
+
+
+$custom-primary : (
+    100: $brand-primary-light,
+    500: $brand-primary,
+    700: $brand-primary-variant,
+    contrast : (
+      100 : $dark,
+      500 : $light,
+      700 : $light
+    ),
+);
+
+$custom-accent : (
+  100: $brand-secondary-light,
+  500 : $brand-secondary,
+  700 : $brand-secondary-variant,
+  contrast : (
+    100 : $dark,
+    500 : $light,
+    700 : $light,
+  ),
+);
+
+$light-primary: mat.m2-define-palette($custom-primary);
+$light-accent: mat.m2-define-palette($custom-accent);
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+  )
+));
+
+$dark-primary: mat.m2-define-palette($custom-primary);
+$dark-accent: mat.m2-define-palette($custom-accent);
+$dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+  ),
+));
+
+
+
+
+
+
+
+
+
+html, .light-mode {
+
+  // Corner radius
+  --radius-none : #{$radius-none};
+  --radius-x-small : #{$radius-x-small};
+  --radius-small : #{$radius-x-small};
+  --radius-main : #{$radius-main};
+  --radius-round : #{$radius-round};
+
+  // Colors
+
+  --transparent:#{$transparent};
+  --dark:#{$dark};
+  --dark-variant:#{$dark-variant};
+  --dark-hover:#{$dark-hover};
+  --light:#{$light};
+  --light-variant:#{$light-variant};
+  --light-hover:#{$light-hover};
+
+  --default-background-color: #{$light};       
+  --default-text-color: #{$dark};              
+  --default-border-color: #{$light-variant};   
+  --default-hover-color: #{$light-hover};
+
+  // Brand color
+  --brand-primary:#{$brand-primary};
+  --brand-primary-variant:#{$brand-primary-variant};
+  --brand-primary-light:#{$brand-primary-light};
+  --brand-primary-text: #{$brand-primary-text};
+
+  --brand-secondary:#{$brand-secondary};
+  --brand-secondary-variant:#{$brand-secondary-variant};
+  --brand-secondary-light:#{$brand-secondary-light};
+  --brand-secondary-text: #{$brand-secondary-text};
+
+  // Primary Family
+  --primary-family: #{$primary-family};
+
+  // Tab
+  --tab-background-selected :var(--default-background-color);
+  --tab-background-unselected :var(--default-background-color);
+  --tab-text-selected: var(--brand-secondary);
+  --tab-text-unselected: var(--default-text-color);
+  --tab-border-selected: var(--brand-secondary);
+  --tab-border-unselected: var(--default-border-color);
+  --tab-hover-selected: var(--default-hover-color);
+  --tab-hover-unselected: var(--default-hover-color);
+
+  // Button
+  --primary-button-background: var(--brand-primary);
+  --primary-button-background-disabled: var(--light-variant);
+  --primary-button-border: var(--brand-primary);
+  --primary-button-border-disabled: var(--light-variant);
+  --primary-button-text: var(--brand-primary-text);
+  --primary-button-text-disabled: var(--default-text-color);
+  --primary-button-background-hover: var(--brand-primary-variant);
+  --primary-button-background-hover-disabled: var(--light-variant);
+  --primary-button-border-hover: var(--brand-primary-variant);
+  --primary-button-border-hover-disabled: var(--light-variant);
+  --primary-button-text-hover: var(--brand-primary-text);
+  --primary-button-text-hover-disabled: var(--default-text-color);
+
+  --secondary-button-background: var(--light);
+  --secondary-button-background-disabled: var(--default-background-color);
+  --secondary-button-border: var(--brand-primary);
+  --secondary-button-border-disabled: var(--light-variant);
+  --secondary-button-text: var(--brand-primary);
+  --secondary-button-text-disabled: var(--light-variant);
+  --secondary-button-background-hover: var(--light-hover);
+  --secondary-button-background-hover-disabled: var(--default-background-color);
+  --secondary-button-border-hover: var(--brand-primary-variant);
+  --secondary-button-border-hover-disabled: var(--light-variant);
+  --secondary-button-text-hover: var(--brand-primary-variant);
+  --secondary-button-text-hover-disabled: var(--light-variant);
+
+
+  @include mat.all-component-themes($light-theme);
+}
+
+
+@import "assets/css/partials/mixins";
+@import "assets/css/partials/status";
+@import "assets/css/partials/theme";
+@import "assets/css/partials/button";
+@import "assets/css/partials/input";
+@import "assets/css/partials/tabs";
+@import "assets/css/partials/icons";
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dark-mode {
+
+  --default-background-color:#{$dark};
+  --default-text-color:#{$light};
+  --default-border-color:#{$dark-variant};
+  --default-hover-color:#{$dark-hover};
+
+  --tab-background-selected :var(--default-background-color);
+  --tab-background-unselected :var(--default-background-color);
+  --tab-text-selected:var(--brand-secondary);
+  --tab-text-unselected:var(--default-text-color);
+  --tab-border-selected: var(--brand-secondary);
+  --tab-border-unselected: var(--default-border-color);
+  --tab-hover-selected: var(--default-hover-color);
+  --tab-hover-unselected: var(--default-hover-color);
+
+  --primary-button-background-disabled: var(--dark-variant);
+  --primary-button-border-disabled: var(--dark-variant);
+  --primary-button-text-disabled: var(--default-text-color);
+  --primary-button-background-hover-disabled: var(--dark-variant);
+  --primary-button-border-hover-disabled: var(--dark-variant);
+  --primary-button-text-hover-disabled: var(--default-text-color);
+
+  --secondary-button-background-disabled: var(--default-background-color);
+  --secondary-button-border-disabled: var(--dark-variant);
+  --secondary-button-text-disabled: var(--dark-variant);
+  --secondary-button-background-hover-disabled: var(--default-background-color);
+  --secondary-button-border-hover-disabled: var(--dark-variant);
+  --secondary-button-text-hover-disabled: var(--dark-variant);
+
+  @include mat.all-component-themes($dark-theme);
+}
+
+
+app-shared-thing-test{
+  width: 100% !important;
+}

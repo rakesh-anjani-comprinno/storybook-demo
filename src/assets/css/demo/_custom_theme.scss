@@ -1,0 +1,125 @@
+@use '@angular/material' as mat;
+
+// Custom Primary Palette
+$custom-primary-palette: mat.m2-define-palette((
+  50: #FBE9E7,
+  100: #FFCCBC,
+  200: #FFAB91,
+  300: #FF8A65,
+  400: #FF7043,
+  500: #FF5722, // Base color
+  600: #F4511E,
+  700: #E64A19,
+  800: #D84315,
+  900: #BF360C,
+  A100: #FF9E80,
+  A200: #FF6E40,
+  A400: #FF3D00,
+  A700: #DD2C00,
+  contrast: (
+    50: mat.$m2-dark-contrast,
+    100: mat.$m2-dark-contrast,
+    200: mat.$m2-dark-contrast,
+    300: mat.$m2-light-contrast,
+    400: mat.$m2-light-contrast,
+    500: mat.$m2-light-contrast,
+    600: mat.$m2-light-contrast,
+    700: mat.$m2-light-contrast,
+    800: mat.$m2-light-contrast,
+    900: mat.$m2-light-contrast,
+    A100: mat.$m2-dark-contrast,
+    A200: mat.$m2-light-contrast,
+    A400: mat.$m2-light-contrast,
+    A700: mat.$m2-light-contrast,
+  ),
+));
+
+// Custom Accent Palette
+$custom-accent-palette: mat.m2-define-palette((
+  50: #F3E5F5,
+  100: #E1BEE7,
+  200: #CE93D8,
+  300: #BA68C8,
+  400: #AB47BC,
+  500: #9C27B0, // Base color
+  600: #8E24AA,
+  700: #7B1FA2,
+  800: #6A1B9A,
+  900: #4A148C,
+  A100: #EA80FC,
+  A200: #E040FB,
+  A400: #D500F9,
+  A700: #AA00FF,
+  contrast: (
+    50: mat.$m2-dark-contrast,
+    100: mat.$m2-dark-contrast,
+    200: mat.$m2-dark-contrast,
+    300: mat.$m2-light-contrast,
+    400: mat.$m2-light-contrast,
+    500: mat.$m2-light-contrast,
+    600: mat.$m2-light-contrast,
+    700: mat.$m2-light-contrast,
+    800: mat.$m2-light-contrast,
+    900: mat.$m2-light-contrast,
+    A100: mat.$m2-dark-contrast,
+    A200: mat.$m2-light-contrast,
+    A400: mat.$m2-light-contrast,
+    A700: mat.$m2-light-contrast,
+  ),
+));
+
+// Custom Warn Palette
+$custom-warn-palette: mat.m2-define-palette((
+  50: #FFEBEE,
+  100: #FFCDD2,
+  200: #EF9A9A,
+  300: #E57373,
+  400: #EF5350,
+  500: #F44336, // Base color
+  600: #E53935,
+  700: #D32F2F,
+  800: #C62828,
+  900: #B71C1C,
+  A100: #FF8A80,
+  A200: #FF5252,
+  A400: #FF1744,
+  A700: #D50000,
+  contrast: (
+    50: mat.$m2-dark-contrast,
+    100: mat.$m2-dark-contrast,
+    200: mat.$m2-dark-contrast,
+    300: mat.$m2-dark-contrast,
+    400: mat.$m2-light-contrast,
+    500: mat.$m2-light-contrast,
+    600: mat.$m2-light-contrast,
+    700: mat.$m2-light-contrast,
+    800: mat.$m2-light-contrast,
+    900: mat.$m2-light-contrast,
+    A100: mat.$m2-dark-contrast,
+    A200: mat.$m2-light-contrast,
+    A400: mat.$m2-light-contrast,
+    A700: mat.$m2-light-contrast,
+  ),
+));
+
+
+
+// Light Theme
+$custom-light-theme: mat.create-theme((
+  color: (
+    primary: $custom-primary-palette,
+    accent: $custom-accent-palette,
+    warn: $custom-warn-palette,
+    mode: light,
+  ),
+));
+
+// Dark Theme
+$custom-dark-theme: mat.create-theme((
+  color: (
+    primary: $custom-primary-palette,
+    accent: $custom-accent-palette,
+    warn: $custom-warn-palette,
+    mode: dark,
+  ),
+));

@@ -1,0 +1,29 @@
+
+<div class="example">
+    <lm-button [label]="'Button Text'" leftIcon="arrow_back" rightIcon="arrow_forward" color="primary"></lm-button>
+    <lm-button [label]="'Button Text'" leftIcon="3d_rotation" rightIcon="accessibility" color="primary"></lm-button>
+    <lm-button [label]="'Button Text'" leftIcon="accessible" rightIcon="accessible_forward" color="primary"></lm-button>
+    <lm-button [label]="'Button Text'" leftIcon="account_balance" rightIcon="account_balance_wallet"        color="primary"></lm-button>
+    <lm-button [label]="'Button Text'"  rightIcon="accessible_forward" color="primary"></lm-button>
+    <lm-button [label]="'Button Text'"  leftIcon="accessible_forward" color="primary"></lm-button>
+    <lm-button [label]="'Button Text'"  color="primary"></lm-button>
+    <lm-button  [label]="'Button Text'" ></lm-button>
+    <lm-button  color="primary"></lm-button>
+    <div style="display:flex;justify-content:start;gap:5px">
+        <lm-status label="Audit" statusClass="status-success"></lm-status>
+        <lm-status label="Computer" statusClass="status-error"></lm-status>
+        <lm-status label="Science" statusClass="status-warning"></lm-status>
+        <lm-status label="Space" statusClass="status-neutral"></lm-status>
+    </div>
+    <lm-table [data]="tableData" [headers]="headers" [templates]="{position}"></lm-table>
+    <lm-table [data]="tableData" [headers]="headers" ></lm-table>
+</div>
+
+
+<ng-template #position let-data="data">
+    <div style="display: flex;flex-direction: column;border:1px solid white;width: 200px;padding: 5px;">
+        <span>Postion: COlumn</span>
+        <span>{{data.position}}</span>
+        <span>This is postion Column in the table</span>
+    </div>
+</ng-template>

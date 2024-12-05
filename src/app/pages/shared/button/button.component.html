@@ -1,0 +1,9 @@
+<button mat-flat-button [color]="color" [disabled]="disabled" type="type">
+    @if(leftIcon){
+    <mat-icon>{{leftIcon}}</mat-icon>
+    }
+    {{label}}
+    @if(rightIcon){
+    <mat-icon iconPositionEnd>{{rightIcon}}</mat-icon>
+    }
+</button>

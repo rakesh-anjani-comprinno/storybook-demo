@@ -1,0 +1,218 @@
+<div style="margin-left: 20px;margin-bottom: 30px;">
+    <section>
+        <mat-button-toggle-group [(ngModel)]="themeModel" (click)="theme()" aria-label="Font Style">
+            <mat-button-toggle value="light">Light</mat-button-toggle>
+            <mat-button-toggle value="dark">Dark</mat-button-toggle>
+        </mat-button-toggle-group>
+    </section>
+
+    <div>
+        <!-- Typology -->
+        <h1>This is heading1</h1>
+        <h2>This is heading2</h2>
+        <h3>This is heading3</h3>
+        <h4>This is heading4</h4>
+        <h5>This is heading5</h5>
+        <h6>This is heading6</h6>
+        <p class="text-main">thsi is text main</p>
+        <p class="text-large">thsi is text Large</p>
+        <p class="text-small">thsi is text Small</p>
+        <p class="display">thsi is text Display</p>
+    </div>
+
+    <div style="display: flex;flex-direction: column;gap:20px ">
+        <!-- Button Section -->
+        <p>******************************************Button Section***************************************</p>
+        <div><span style="text-align: center;">Primary Button With Two Icons</span></div>
+        <div class="example-button-container">
+            <!-- <button mat-flat-button color="primary">
+                <mat-icon>arrow_back</mat-icon>
+                Button Text
+                <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+            </button> -->
+            <lm-button [label]="'Button Text'" leftIcon="arrow_back" rightIcon="arrow_forward" color="primary"></lm-button>
+        </div>
+
+        <div><span style="text-align: center;">Primary Button With Two Icons And Disabled</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="primary" disabled>
+                <mat-icon>arrow_back</mat-icon>
+                Button Text
+                <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+            </button>
+        </div>
+
+        <div><span style="text-align: center;">Primary Button With One Left Icon</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="primary">
+                <mat-icon>arrow_back</mat-icon>
+                Button Text
+            </button>
+        </div>
+
+        <div><span style="text-align: center;">Primary Button With One Right Icon</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="primary">
+                Button Text
+                <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+            </button>
+        </div>
+
+        <div><span style="text-align: center;">Primary Button With No Icon</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="primary">
+                Button Text
+            </button>
+        </div>
+
+        <div><span style="text-align: center;">Secondary Button</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="accent">
+                <mat-icon>arrow_back</mat-icon>
+                Button
+                <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+            </button>
+        </div>
+
+        <div><span style="text-align: center;">Secondary Button With Disabled</span></div>
+        <div class="example-button-container">
+            <button mat-flat-button color="accent" disabled>
+                <mat-icon>arrow_back</mat-icon>
+                Button
+                <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div style="display: flex;flex-direction: column;gap:20px ">
+        <p>******************************************Input Section***************************************</p>
+
+        <div>
+            <p><mat-label>Input With Both Icon</mat-label></p>
+
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input type="text" matInput>
+                <mat-icon matSuffix>shop</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p><mat-label>Input With Left Icon</mat-label></p>
+
+            <mat-form-field>
+                <mat-icon matPrefix>search</mat-icon>
+                <input type="text" matInput>
+
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p><mat-label>Input With Right Icon</mat-label></p>
+            <mat-form-field>
+                <input type="text" matInput>
+                <mat-icon matSuffix>shop</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p><mat-label>Input With No Icon</mat-label></p>
+            <mat-form-field>
+                <input type="text" matInput>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p><mat-label>Input With Time Type</mat-label></p>
+            <div class="input-label">
+                <mat-label>Select Start Time</mat-label>
+            </div>
+            <mat-form-field>
+                <input type="time" step="1" matInput>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div style="display: flex;flex-direction: column;gap:20px ">
+        <p>******************************************DropDown Section***************************************</p>
+        <div>
+            <p>Drop Down and Filter</p>
+            <div class="input-label">
+                <mat-label required>Select Video Format</mat-label>
+            </div>
+            <mat-form-field>
+                <mat-select>
+                    @for(item of
+                    [{labelValue:'Apple',value:'apple'},{labelValue:'Orangeaaaaaaaaaaaaaaaaaa',value:'orange'}] ;track
+                    item){
+                    <mat-option [value]="item.value">{{item.labelValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <p>Drop Down and Filter With requi9red Field</p>
+            <div class="input-label">
+                <mat-label class="required">Select Video Format</mat-label>
+            </div>
+            <mat-form-field>
+
+                <mat-select>
+                    @for(item of
+                    [{labelValue:'Apple',value:'apple'},{labelValue:'Orangeaaaaaaaaaaaaaaaaaa',value:'orange'}] ;track
+                    item){
+                    <mat-option [value]="item.value">{{item.labelValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div style="display: flex;flex-direction: column;gap:20px ">
+        <p>******************************************Filter Section***************************************</p>
+        <div>
+            <p>Filter Menu</p>
+            <mat-form-field class="filter-menu">
+                <mat-select>
+                    @for(item of
+                    [{labelValue:'Apple',value:'apple'},{labelValue:'Orangeaaaaaaaaaaaaaaaaaa',value:'orange'}] ;track
+                    item){
+                    <mat-option [value]="item.value">{{item.labelValue}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <p>******************************************Tabs Section***************************************</p>
+        <section>
+            <div>
+                <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style"
+                    [hideSingleSelectionIndicator]="hideSingleSelectionIndicator">
+                    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+                    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+                    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+                    <mat-button-toggle value="underline2">Underline2</mat-button-toggle>
+                    <mat-button-toggle value="underline3">Underline3</mat-button-toggle>
+                </mat-button-toggle-group>
+                <p>Chosen value is {{fontStyle}}</p>
+            </div>
+        </section>
+    </div>
+    <div>
+        <p>******************************************Status Section***************************************</p>
+        <section>
+            <div style="display: flex;gap:10px">
+                <span class="status-success" style="padding: 5px;border-radius:3px">Success</span>
+                <span class="status-warning" style="padding: 5px;border-radius:3px">Warn</span>
+                <span class="status-error" style="padding: 5px;border-radius:3px">Error</span>
+                <span class="status-neutral" style="padding: 5px;border-radius:3px">Neutral</span>
+
+            </div>
+        </section>
+    </div>
+
+</div>

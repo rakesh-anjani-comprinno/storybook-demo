@@ -1,0 +1,15 @@
+// Light Theme
+$theme-light: (
+  background: $light,          
+  text: $dark,                 
+  border: $light-variant,      
+  hover: $light-hover          
+);
+
+// Dark Theme
+$theme-dark: (
+  background: $dark,           
+  text: $light,                
+  border: $dark-variant,       
+  hover: $dark-hover          
+);
